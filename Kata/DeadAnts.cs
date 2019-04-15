@@ -37,7 +37,7 @@ namespace Kata
                 return 0;
             input = input.ToLower();
 
-            var bodyPartCount = GetCharacterCounts(input);
+            var bodyPartCount = GetBodyPartsCounts(input);
 
             var antsCount = GetAliveAntsCount(input);
 
@@ -68,7 +68,7 @@ namespace Kata
             return antsCount;
         }
 
-        private static Dictionary<char, int> GetCharacterCounts(string input)
+        private static Dictionary<char, int> GetBodyPartsCounts(string input)
         {
             var counts = new Dictionary<char, int>()
             {
