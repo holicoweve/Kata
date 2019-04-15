@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace KataTests
 {
     [TestClass]
-    public class ArrayMathTest
+    public class ProductOfArrayItemsTest
     {
         [DataTestMethod]
         [DataRow(new int[] {1, 2, 3}, 6)]
@@ -15,21 +15,21 @@ namespace KataTests
         [DataRow(new int[] {0, 2, 9, 7}, 0)]
         public void ProductTest(int[] values, int expected)
         {
-            Assert.AreEqual(expected, ArrayMath.Product(values));
+            Assert.AreEqual(expected, ProductOfArrayItems.Product(values));
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNullArray()
         {
-            ArrayMath.Product(null);
+            ProductOfArrayItems.Product(null);
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
         public void TestEmptyArray()
         {
-            ArrayMath.Product(new int[0]);
+            ProductOfArrayItems.Product(new int[0]);
         }
     }
 }
