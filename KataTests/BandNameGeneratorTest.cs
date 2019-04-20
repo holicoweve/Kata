@@ -12,10 +12,10 @@ namespace KataTests
         [TestMethod]
         public void SampleTest()
         {
-            Assert.AreEqual("The Knife", BandNameGenerators.BandNameGenerator("knife"));
-            Assert.AreEqual("Tartart", BandNameGenerators.BandNameGenerator("tart"));
-            Assert.AreEqual("Sandlesandles", BandNameGenerators.BandNameGenerator("sandles"));
-            Assert.AreEqual("The Bed", BandNameGenerators.BandNameGenerator("bed"));
+            Assert.AreEqual("The Knife", BandNameGeneratorKata.BandNameGenerator("knife"));
+            Assert.AreEqual("Tartart", BandNameGeneratorKata.BandNameGenerator("tart"));
+            Assert.AreEqual("Sandlesandles", BandNameGeneratorKata.BandNameGenerator("sandles"));
+            Assert.AreEqual("The Bed", BandNameGeneratorKata.BandNameGenerator("bed"));
         }
     }
 }

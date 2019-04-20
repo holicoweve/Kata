@@ -24,7 +24,7 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/band-name-generator/train/csharp
     /// </summary>
-    public static class BandNameGenerators
+    public static class BandNameGeneratorKata
     {
         public static string BandNameGenerator(string input)
         {
