@@ -37,15 +37,16 @@ namespace Kata
                 return 0;
             input = input.ToLower();
 
-            var bodyPartCount = GetBodyPartsCounts(input);
-
-            var antsCount = GetAliveAntsCount(input);
-
-            var deadAntsCount = bodyPartCount.Values.Max() - antsCount;
-
-            return deadAntsCount;
+            var bodyCounts = input.Replace("ant", "").GroupBy(c => c).Where(c => "ant".Contains(c.Key));
+            return !bodyCounts.Any() ? 0 : bodyCounts.Select(c => c.Count()).Max();
+            
+            // Working solution
+            //var bodyPartCount = GetBodyPartsCounts(input);
+            //var antsCount = GetAliveAntsCount(input);
+            //var deadAntsCount = bodyPartCount.Values.Max() - antsCount;
+            //return deadAntsCount;
         }
-
+        /*
         private static int GetAliveAntsCount(string input)
         {
             int antsCount = 0;
@@ -87,5 +88,6 @@ namespace Kata
 
             return counts;
         }
+        */
     }
 }

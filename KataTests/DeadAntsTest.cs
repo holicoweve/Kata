@@ -10,10 +10,20 @@ namespace KataTests
         [TestMethod]
         public void BasicTest()
         {
-            Assert.AreEqual(0, DeadAnts.DeadAntsCount("ant ant ant ant"));
-            Assert.AreEqual(0, DeadAnts.DeadAntsCount(null));
             Assert.AreEqual(2, DeadAnts.DeadAntsCount("ant anantt aantnt"));
             Assert.AreEqual(1, DeadAnts.DeadAntsCount("ant ant .... a nt"));
+        }
+
+        [TestMethod]
+        public void NullInputTest()
+        {
+            Assert.AreEqual(0, DeadAnts.DeadAntsCount(null));
+        }
+
+        [TestMethod]
+        public void AllAliveTest()
+        {
+            Assert.AreEqual(0, DeadAnts.DeadAntsCount("ant ant ant ant"));
         }
     }
 }
