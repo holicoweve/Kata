@@ -39,7 +39,7 @@ namespace Kata
 
             var bodyCounts = input.Replace("ant", "").GroupBy(c => c).Where(c => "ant".Contains(c.Key));
             return !bodyCounts.Any() ? 0 : bodyCounts.Select(c => c.Count()).Max();
-            
+
             // Working solution
             //var bodyPartCount = GetBodyPartsCounts(input);
             //var antsCount = GetAliveAntsCount(input);
