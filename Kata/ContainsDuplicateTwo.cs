@@ -9,12 +9,12 @@ namespace Kata
     {
         public bool ContainsNearbyDuplicate(int[] inputs, int k)
         {
-            var grouped = inputs
+            var groups = inputs
                 .Select((value, index) => new { value = value, index = index })
                 .GroupBy(item => item.value, item => item.index)
                 .Where(group=>group.Count()>=2);
 
-            foreach (var group in grouped)
+            foreach (var group in groups)
             {
                 var groupenum = group.AsEnumerable();
                 for (var i = 0; i < groupenum.Count() - 1; i++)

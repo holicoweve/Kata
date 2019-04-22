@@ -14,5 +14,13 @@ namespace KataTests
             Assert.AreEqual(true,kata.ContainsNearbyDuplicate(new []{1,0,1,1},1));
             Assert.AreEqual(false,kata.ContainsNearbyDuplicate(new []{1,2,3,1,2,3},2));
         }
+
+        [TestMethod]
+        public void NoDuplicateTest()
+        {
+            var kata = new ContainsDuplicateTwo();
+
+            Assert.AreEqual(false,kata.ContainsNearbyDuplicate(new []{1,2,3,4},3));
+        }
     }
 }
