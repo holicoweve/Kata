@@ -16,7 +16,7 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/string-average/train/csharp
     /// </summary>
-    public class StringAverage
+    public static class StringAverage
     {
         public static string AverageString(string input)
         {
@@ -30,7 +30,7 @@ namespace Kata
             try
             {
                 var average = input.Split(" ")
-                    .ToList()
+                    .AsEnumerable()
                     .Select(x => x.TextToInt())
                     .Average();
                 return ((int) Math.Floor(average)).IntToText();
@@ -52,8 +52,8 @@ namespace Kata
 
         public static int TextToInt(this string input)
         {
-            if(Words.Contains(input)!=true)
-                throw new ArgumentOutOfRangeException();
+            if(!Words.Contains(input))
+                throw new ArgumentOutOfRangeException(nameof(input),"Only support input between zero to nine");
             return Array.IndexOf(Words, input);
         }
 
@@ -61,7 +61,7 @@ namespace Kata
         public static string IntToText(this int input)
         {
             if (input < 0 || input > Words.Length - 1)
-                throw new AbandonedMutexException();
+                throw new ArgumentOutOfRangeException(nameof(input),"Only support input between 0 to 9");
             return Words[input];
         }
     }

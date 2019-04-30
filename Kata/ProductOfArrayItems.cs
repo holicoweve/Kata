@@ -15,14 +15,14 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/product-of-array-items/train/csharp
     /// </summary>
-    public class ProductOfArrayItems
+    public static class ProductOfArrayItems
     {
         public static int Product(int[] values)
         {
             if (values == null)
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(values),"Input cannot be null");
             if (values.Length == 0)
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("Input cannot be empty");
 
             var result = 1;
             foreach (var item in values)

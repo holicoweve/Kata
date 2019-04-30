@@ -40,8 +40,6 @@ namespace Kata
                 {
                     var jValue = inputs[j];
                     var jTarget = iTarget - jValue;
-                    //if (jTarget > inputs.Last())
-                    //    continue;
                     for (var k = j + 1; k < inputs.Length; k++)
                     {
                         var kValue = inputs[k];
