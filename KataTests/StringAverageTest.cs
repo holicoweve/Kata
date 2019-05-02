@@ -26,9 +26,21 @@ namespace KataTests
         [DataRow("zero nine five two", "four")]
         [DataRow("four six two three", "three")]
         [DataRow("one two three four five", "three")]
-        [DataRow("five four", "four")]
-        [DataRow("one one eight one", "two")]
         public void ComplexTest(string input, string expected)
+        {
+            Assert.AreEqual(expected, _kata.AverageString(input));
+        }
+
+        [DataTestMethod]
+        [DataRow("five four", "four")]
+        public void RoundDownTest(string input, string expected)
+        {
+            Assert.AreEqual(expected, _kata.AverageString(input));
+        }
+
+        [DataTestMethod]
+        [DataRow("one one eight one", "two")]
+        public void SomeRepeatedElementTest(string input, string expected)
         {
             Assert.AreEqual(expected, _kata.AverageString(input));
         }
