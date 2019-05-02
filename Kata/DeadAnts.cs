@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kata
 {
-    public static class DeadAnts
+    public class DeadAnts
     {
         /// <summary>
         /// Kata - Dead Ants
@@ -31,7 +31,7 @@ namespace Kata
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static int DeadAntsCount(string input)
+        public int DeadAntsCount(string input)
         {
             if (string.IsNullOrEmpty(input))
                 return 0;

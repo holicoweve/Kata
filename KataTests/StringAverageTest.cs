@@ -6,12 +6,20 @@ namespace KataTests
     [TestClass]
     public class StringAverageTest
     {
+        private StringAverage _kata;
+
+        [TestInitialize]
+        public void init()
+        {
+            _kata = new StringAverage();
+        }
+
         [DataTestMethod]
         [DataRow("one", "one")]
         [DataRow("two", "two")]
-        public void SimpleTest(string input, string expected)
+        public void SingleInputTest(string input, string expected)
         {
-            Assert.AreEqual(expected, StringAverage.AverageString(input));
+            Assert.AreEqual(expected, _kata.AverageString(input));
         }
 
         [DataTestMethod]
@@ -19,12 +27,24 @@ namespace KataTests
         [DataRow("four six two three", "three")]
         [DataRow("one two three four five", "three")]
         [DataRow("five four", "four")]
-        [DataRow("zero zero zero zero zero", "zero")]
         [DataRow("one one eight one", "two")]
-        [DataRow(" ", "n/a")]
         public void ComplexTest(string input, string expected)
         {
-            Assert.AreEqual(expected, StringAverage.AverageString(input));
+            Assert.AreEqual(expected, _kata.AverageString(input));
+        }
+
+        [DataTestMethod]
+        [DataRow("zero zero zero zero zero", "zero")]
+        public void AllZeroInputTest(string input, string expected)
+        {
+            Assert.AreEqual(expected, _kata.AverageString(input));
+        }
+
+        [DataTestMethod]
+        [DataRow(" ", "n/a")]
+        public void EmptyInputTest(string input, string expected)
+        {
+            Assert.AreEqual(expected, _kata.AverageString(input));
         }
     }
 

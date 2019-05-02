@@ -9,13 +9,36 @@ namespace KataTests
     [TestClass]
     public class BandNameGeneratorTest
     {
-        [TestMethod]
-        public void SampleTest()
+        private BandNameGeneratorKata _kata;
+
+        [TestInitialize]
+        public void init()
         {
-            Assert.AreEqual("The Knife", BandNameGeneratorKata.BandNameGenerator("knife"));
-            Assert.AreEqual("Tartart", BandNameGeneratorKata.BandNameGenerator("tart"));
-            Assert.AreEqual("Sandlesandles", BandNameGeneratorKata.BandNameGenerator("sandles"));
-            Assert.AreEqual("The Bed", BandNameGeneratorKata.BandNameGenerator("bed"));
+            _kata = new BandNameGeneratorKata();
+        }
+
+        [TestMethod]
+        public void TheKnifeTest()
+        {
+            Assert.AreEqual("The Knife", _kata.BandNameGenerator("knife"));
+        }
+
+        [TestMethod]
+        public void TheBedTest()
+        {
+            Assert.AreEqual("The Bed", _kata.BandNameGenerator("bed"));
+        }
+
+        [TestMethod]
+        public void TartartTest()
+        {
+            Assert.AreEqual("Tartart", _kata.BandNameGenerator("tart"));
+        }
+
+        [TestMethod]
+        public void SandlesandlestTest()
+        {
+            Assert.AreEqual("Sandlesandles", _kata.BandNameGenerator("sandles"));
         }
     }
 }

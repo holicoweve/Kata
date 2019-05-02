@@ -16,15 +16,13 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/string-average/train/csharp
     /// </summary>
-    public static class StringAverage
+    public class StringAverage
     {
-        public static string AverageString(string input)
+        public string AverageString(string input)
         {
             var error = "n/a";
 
-            if (input == string.Empty)
-                return error;
-            if (input.Split(" ").Length == 0)
+            if (input == string.Empty || input.Split(" ").Length == 0)
                 return error;
 
             try
@@ -56,7 +54,6 @@ namespace Kata
                 throw new ArgumentOutOfRangeException(nameof(input),"Only support input between zero to nine");
             return Array.IndexOf(Words, input);
         }
-
 
         public static string IntToText(this int input)
         {

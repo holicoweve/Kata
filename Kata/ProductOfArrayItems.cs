@@ -15,9 +15,9 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/product-of-array-items/train/csharp
     /// </summary>
-    public static class ProductOfArrayItems
+    public class ProductOfArrayItems
     {
-        public static int Product(int[] values)
+        public int Product(int[] values)
         {
             if (values == null)
                 throw new ArgumentNullException(nameof(values),"Input cannot be null");

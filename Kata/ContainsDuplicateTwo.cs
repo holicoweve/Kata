@@ -10,16 +10,16 @@ namespace Kata
         public bool ContainsNearbyDuplicate(int[] inputs, int k)
         {
             var groups = inputs
-                .Select((value, index) => new { value = value, index = index })
+                .Select((value, index) => new { value, index })
                 .GroupBy(item => item.value, item => item.index)
                 .Where(group=>group.Count()>=2);
 
             foreach (var group in groups)
             {
-                var groupenum = group.AsEnumerable();
-                for (var i = 0; i < groupenum.Count() - 1; i++)
+                var groupArray = group.ToArray();
+                for (var i = 0; i < groupArray.Count() - 1; i++)
                 {
-                    if (groupenum.ElementAt(i+1) - groupenum.ElementAt(i) <= k)
+                    if (groupArray.ElementAt(i+1) - groupArray.ElementAt(i) <= k)
                     {
                         return true;
                     }

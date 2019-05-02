@@ -24,9 +24,9 @@ namespace Kata
     ///
     /// https://www.codewars.com/kata/band-name-generator/train/csharp
     /// </summary>
-    public static class BandNameGeneratorKata
+    public class BandNameGeneratorKata
     {
-        public static string BandNameGenerator(string input)
+        public string BandNameGenerator(string input)
         {
             if (string.IsNullOrEmpty(input))
                 return null;
@@ -42,12 +42,12 @@ namespace Kata
             }
         }
 
-        private static bool StartsAndEndSameLetter(string input)
+        private bool StartsAndEndSameLetter(string input)
         {
             return input.First() == input.Last();
         }
 
-        private static string Capitalize(string input)
+        private string Capitalize(string input)
         {
             return char.ToUpper(input.First()) + input.Substring(1);
         }
