@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Kata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,16 +9,34 @@ namespace KataTests
     [TestClass]
     public class ThreeSumKataTest
     {
+        private ThreeSumKata _kata;
+
+        [TestInitialize]
+        public void Init()
+        {
+            _kata = new ThreeSumKata();
+        }
+
         [TestMethod]
         public void SimpleTest()
         {
-            // TODO: need to figure out how to test equality of nested arrays
-            
-            ThreeSumKata kata = new ThreeSumKata();
+            var expected = Flatten(new List<IList<int>> { new List<int> { -1, 0, 1 }, new List<int>() { -1, -1, 2 } });
+            var actual = Flatten(_kata.ThreeSum(new int[] { -1, 0, 1, 2, -1, -4 }));
 
-            var expected = new List<IList<int>> { new List<int> { -1, 0, 1 }, new List<int>() { -1, -1, 2 } };
-            var actual = kata.ThreeSum(new int[] { -1, 0, 1, 2, -1, -4 });
-            //CollectionAssert.AreEquivalent(expected, actual as List<IList<int>>);
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+        public List<string> Flatten(IList<IList<int>> nestedList)
+        {
+            List<string> result = new List<string>();
+            foreach (var innerList in nestedList)
+            {
+                var list = innerList.ToList();
+                list.Sort();
+                result.Add(list.ToString());
+            }
+
+            return result;
         }
     }
 }
