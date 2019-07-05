@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Kata;
 
 namespace KataTests
@@ -18,6 +15,12 @@ namespace KataTests
         }
 
         [TestMethod]
+        public void DoubleRot13GivesInputText()
+        {
+            Assert.AreEqual("aBcDeFg", _kata.Encode(_kata.Encode("aBcDeFg")));
+        }
+
+        [TestMethod]
         public void UpperCaseOnly()
         {
             Assert.AreEqual("TEST", _kata.Encode("GRFG"));
@@ -27,6 +30,12 @@ namespace KataTests
         public void LowerCaseOnly()
         {
             Assert.AreEqual("test", _kata.Encode("grfg"));
+        }
+
+        [TestMethod]
+        public void MixCases()
+        {
+            Assert.AreEqual("TESTtest",_kata.Encode("GRFGgrfg"));
         }
 
         [TestMethod]
