@@ -80,5 +80,38 @@ namespace KataTests
 
 			Assert.AreEqual(expected, actual);
 		}
+
+		[TestMethod]
+		public void LessThanIntMin2()
+		{
+			var input = "-2147483647";
+
+			var expected = -2147483647;
+			var actual = _kata.Atoi(input);
+
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void VeryLargeNumber()
+		{
+			var input = "20000000000000000000";
+
+			var expected = 2147483647;
+			var actual = _kata.Atoi(input);
+
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void VeryVeryLargeNumber()
+		{
+			var input = "1234567890123456789012345678901234567890";
+
+			var expected = 2147483647;
+			var actual = _kata.Atoi(input);
+
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }

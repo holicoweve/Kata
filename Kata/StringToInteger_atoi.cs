@@ -1,14 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Kata
 {
 	public class StringToInteger_atoi
 	{
-		public int Atoi(string input) 
+		public int Atoi(string input)
 		{
-			return 0;
+			int result = 0;
+			input = input.Trim();
+			var pattern = @"^[-+]?(\d+)";
+
+			var match = Regex.Match(input, pattern);
+			if (match.Success)
+			{
+				Int64.TryParse(match.Value, out var parseResult);
+				var matchStr = match.Value;
+				if (matchStr.StartsWith('-'))
+				{
+					matchStr = matchStr.Substring(0, 1) + matchStr.Substring(1).TrimStart('0');
+				}
+				matchStr = matchStr.TrimStart('+','0');
+				if ((matchStr.Length > 11 && matchStr.StartsWith('-')) || parseResult < int.MinValue)
+					return int.MinValue;
+				if (matchStr.Length > 11 || parseResult > int.MaxValue)
+					return int.MaxValue;
+				result = (int)parseResult;
+			}
+
+			return result;
 		}
 	}
 }
