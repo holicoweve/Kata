@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Kata
 {
-	public class StringToInteger_atoi
+	public class StringToIntegerAtoi
 	{
 		public int Atoi(string input)
 		{
@@ -20,7 +20,7 @@ namespace Kata
 				{
 					matchStr = matchStr.Substring(0, 1) + matchStr.Substring(1).TrimStart('0');
 				}
-				matchStr = matchStr.TrimStart('+','0');
+				matchStr = matchStr.TrimStart('+', '0');
 				if ((matchStr.Length > 11 && matchStr.StartsWith('-')) || parseResult < int.MinValue)
 					return int.MinValue;
 				if (matchStr.Length > 11 || parseResult > int.MaxValue)

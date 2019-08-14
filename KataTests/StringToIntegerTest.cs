@@ -7,12 +7,12 @@ namespace KataTests
 	[TestClass]
 	public class StringToIntegerTest
 	{
-		private StringToInteger_atoi _kata;
+		private StringToIntegerAtoi _kata;
 
 		[TestInitialize]
 		public void Init()
 		{
-			_kata = new StringToInteger_atoi();
+			_kata = new StringToIntegerAtoi();
 		}
 
 		[TestMethod]
