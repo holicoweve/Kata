@@ -3,6 +3,10 @@ using System.Text.RegularExpressions;
 
 namespace Kata
 {
+	/// <summary>
+	/// String to Integer (atoi)
+	/// https://leetcode.com/problems/string-to-integer-atoi/
+	/// </summary>
 	public class StringToIntegerAtoi
 	{
 		public int Atoi(string input)
