@@ -17,16 +17,20 @@ namespace Kata
 		public int MaxArea(int[] height)
 		{
 			var maxArea = 0;
-
-			for (int leftIndex = 0; leftIndex < height.Length - 1; leftIndex++)
+			var leftIndex = 0;
+			var rightIndex = height.Length - 1;
+			while (leftIndex < rightIndex)
 			{
-				if (height[leftIndex] * height.Length - leftIndex - 1 < maxArea)
-					continue;
+				var tempArea = CalculateArea(height, leftIndex, rightIndex);
+				maxArea = Math.Max(maxArea, tempArea);
 
-				for (int rightIndex = leftIndex + 1; rightIndex < height.Length; rightIndex++)
+				if (height[leftIndex] < height[rightIndex])
 				{
-					var tempArea = CalculateArea(height, leftIndex, rightIndex);
-					maxArea = Math.Max(maxArea, tempArea);
+					leftIndex++;
+				}
+				else
+				{
+					rightIndex--;
 				}
 			}
 
