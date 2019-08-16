@@ -6,12 +6,12 @@ namespace KataTests
 	[TestClass]
 	public class CountAndSaySlnTest
 	{
-		private CountAndSay_Sln _kata;
+		private CountAndSaySln _kata;
 
 		[TestInitialize]
 		public void Init()
 		{
-			_kata = new CountAndSay_Sln();
+			_kata = new CountAndSaySln();
 		}
 
 		[DataTestMethod]
@@ -25,6 +25,15 @@ namespace KataTests
 			var actual = _kata.CountAndSay(n);
 			Assert.AreEqual(expected, actual);
 		}
-		
+
+		[TestMethod]
+		public void SayTest()
+		{
+			var input = "11";
+			var expected = "21";
+
+			var actual = _kata.Say(input);
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }
