@@ -29,7 +29,7 @@ namespace KataTests
 		[TestMethod]
 		public void OneCharLength()
 		{
-			var input = new[] { "a","b" };
+			var input = new[] { "a", "b" };
 			var expected = "";
 			var actual = _kata.FindLongestCommonPrefix(input);
 			Assert.AreEqual(expected, actual);
@@ -38,7 +38,7 @@ namespace KataTests
 		[TestMethod]
 		public void RepeatingItems()
 		{
-			var input = new[] { "flowerflower","flower" };
+			var input = new[] { "flowerflower", "flower" };
 			var expected = "flower";
 			var actual = _kata.FindLongestCommonPrefix(input);
 			Assert.AreEqual(expected, actual);
@@ -59,6 +59,36 @@ namespace KataTests
 			var input = new[] { "dog", "racecar", "car" };
 			var expected = "";
 			var actual = _kata.FindLongestCommonPrefix(input);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void CommonPrefixTest_SameStrings()
+		{
+			var input1 = "flower";
+			var input2 = "flower";
+			var expected = "flower";
+			var actual = _kata.CommonPrefix(input1, input2);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void CommonPrefixTest_EmptyStrings()
+		{
+			var input1 = "";
+			var input2 = "";
+			var expected = "";
+			var actual = _kata.CommonPrefix(input1, input2);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void CommonPrefixTest_PartialMatch()
+		{
+			var input1 = "tabletop";
+			var input2 = "tablecloth";
+			var expected = "table";
+			var actual = _kata.CommonPrefix(input1, input2);
 			Assert.AreEqual(expected, actual);
 		}
 	}

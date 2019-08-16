@@ -13,31 +13,33 @@ namespace Kata
 	{
 		public string FindLongestCommonPrefix(string[] inputs)
 		{
-			var prefix = string.Empty;
-			
 			if (inputs.Length == 0)
-				return prefix;
+				return string.Empty;
 
-			var shortestItem = inputs.OrderBy(i => i.Length).First();
-			var maxLength = shortestItem.Length;
-
-			for(var i = 1;i<=maxLength;i++)
+			var lcp = inputs[0];
+			foreach (var item in inputs.Skip(1))
 			{
-				var prevPrefix = prefix;
-				prefix = shortestItem.Substring(0, i);
-				foreach (var item in inputs)
+				lcp = CommonPrefix(lcp, item);
+				if (lcp == string.Empty)
+					return lcp;
+			}
+
+			return lcp;
+
+		}
+
+		internal string CommonPrefix(string input1, string input2)
+		{
+			var minLength = Math.Min(input1.Length, input2.Length);
+			for (var i = 0; i < minLength; i++)
+			{
+				if (input1[i] != input2[i])
 				{
-					if (!item.StartsWith(prefix))
-						return prevPrefix;
+					return input1.Substring(0, i);
 				}
 			}
 
-			return shortestItem;
-		}
-
-		private string CommonPrefix(string input1, string input2)
-		{
-			throw new NotImplementedException();
+			return input1.Substring(0, minLength);
 		}
 	}
 }
