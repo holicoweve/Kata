@@ -24,6 +24,7 @@ namespace KataTests
 			var expected = 1;
 			var actual = _kata.Length(input);
 
+
 			Assert.AreEqual(expected, actual);
 		}
 
@@ -47,5 +48,35 @@ namespace KataTests
 			Assert.AreEqual(expected, actual);
 		}
 
+		[TestMethod]
+		public void OneSpace()
+		{
+			var input = " ";
+			var expected = 1;
+			var actual = _kata.Length(input);
+
+
+			Assert.AreEqual(expected, actual);
+		}
+		
+		[TestMethod]
+		public void OneChar()
+		{
+			var input = "a";
+			var expected = 1;
+			var actual = _kata.Length(input);
+
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void FullLength()
+		{
+			var input = "abc";
+			var expected = 3;
+			var actual = _kata.Length(input);
+
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }
