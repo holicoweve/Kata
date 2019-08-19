@@ -13,23 +13,23 @@ namespace Kata
 	{
 		internal string LongestSubstring(string input)
 		{
-			var hashMap = new Dictionary<char,int>();
+			var hashMap = new Dictionary<char, int>();
 			var longestSubstring = string.Empty;
 			var leftIndex = 0;
 			var rightIndex = 0;
-			while (leftIndex <= rightIndex && leftIndex < input.Length && rightIndex < input.Length)
+			while (leftIndex <= rightIndex && rightIndex < input.Length)
 			{
-				if (!hashMap.ContainsKey(input[rightIndex]))
+				if (hashMap.ContainsKey(input[rightIndex]))
 				{
-					hashMap.Add(input[rightIndex],rightIndex);
-					rightIndex++;
+					UpdateLongestSubstring(input, leftIndex, rightIndex, ref longestSubstring);
+					leftIndex = hashMap[input[rightIndex]] + 1;
+					rightIndex = leftIndex;
+					hashMap.Clear();
 				}
 				else
 				{
-					UpdateLongestSubstring(input, leftIndex, rightIndex, ref longestSubstring);
-					leftIndex = hashMap[input[rightIndex]]+1;
-					rightIndex = leftIndex;
-					hashMap.Clear();
+					hashMap.Add(input[rightIndex], rightIndex);
+					rightIndex++;
 				}
 			}
 			UpdateLongestSubstring(input, leftIndex, rightIndex, ref longestSubstring);
