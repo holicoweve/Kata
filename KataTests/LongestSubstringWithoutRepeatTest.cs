@@ -78,5 +78,15 @@ namespace KataTests
 
 			Assert.AreEqual(expected, actual);
 		}
+
+		[TestMethod]
+		public void AnswerAtEnd()
+		{
+			var input = "abcabcdefghi";
+			var expected = 9;
+			var actual = _kata.Length(input);
+
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }
