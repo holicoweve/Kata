@@ -1,44 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Kata;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
+
     public class BandNameGeneratorTest
     {
         private BandNameGeneratorKata _kata;
 
-        [TestInitialize]
-        public void init()
+        public BandNameGeneratorTest()
         {
             _kata = new BandNameGeneratorKata();
         }
 
-        [TestMethod]
+        [Fact]
         public void TheKnifeTest()
         {
-            Assert.AreEqual("The Knife", _kata.BandNameGenerator("knife"));
+            Assert.Equal("The Knife", _kata.BandNameGenerator("knife"));
         }
 
-        [TestMethod]
+        [Fact]
         public void TheBedTest()
         {
-            Assert.AreEqual("The Bed", _kata.BandNameGenerator("bed"));
+            Assert.Equal("The Bed", _kata.BandNameGenerator("bed"));
         }
 
-        [TestMethod]
+        [Fact]
         public void TartartTest()
         {
-            Assert.AreEqual("Tartart", _kata.BandNameGenerator("tart"));
+            Assert.Equal("Tartart", _kata.BandNameGenerator("tart"));
         }
 
-        [TestMethod]
+        [Fact]
         public void SandlesandlestTest()
         {
-            Assert.AreEqual("Sandlesandles", _kata.BandNameGenerator("sandles"));
+            Assert.Equal("Sandlesandles", _kata.BandNameGenerator("sandles"));
         }
     }
 }

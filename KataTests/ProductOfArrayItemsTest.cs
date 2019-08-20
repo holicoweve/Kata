@@ -1,56 +1,52 @@
 ﻿using System;
 using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class ProductOfArrayItemsTest
+	public class ProductOfArrayItemsTest
     {
         private ProductOfArrayItems _kata;
 
-        [TestInitialize]
-        public void init()
+        public ProductOfArrayItemsTest()
         {
             _kata = new ProductOfArrayItems();
         }
 
-        [TestMethod]
+        [Fact]
         public void NegativeInputTest()
         {
-            Assert.AreEqual(-672, _kata.Product(new int[] { -2, 6, 7, 8 }));
+            Assert.Equal(-672, _kata.Product(new int[] { -2, 6, 7, 8 }));
         }
 
-        [TestMethod]
+        [Fact]
         public void ZeroInInputTest()
         {
-            Assert.AreEqual(0, _kata.Product(new int[] { 0, 2, 9, 7 }));
+            Assert.Equal(0, _kata.Product(new int[] { 0, 2, 9, 7 }));
         }
 
-        [TestMethod]
+        [Fact]
         public void SingleInputTest()
         {
-            Assert.AreEqual(10, _kata.Product(new int[] { 10 }));
+            Assert.Equal(10, _kata.Product(new int[] { 10 }));
         }
 
-        [TestMethod]
+        [Fact]
         public void PositiveInputTest()
         {
-            Assert.AreEqual(540, _kata.Product(new int[] { 5, 4, 1, 3, 9 }));
+            Assert.Equal(540, _kata.Product(new int[] { 5, 4, 1, 3, 9 }));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public void TestNullArray()
         {
-            _kata.Product(null);
+	        Assert.Throws<ArgumentNullException>(()=>_kata.Product(null));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
+        [Fact]
         public void TestEmptyArray()
         {
-            _kata.Product(new int[0]);
+	        Assert.Throws<InvalidOperationException>(()=>_kata.Product(new int[0]));
         }
     }
 }

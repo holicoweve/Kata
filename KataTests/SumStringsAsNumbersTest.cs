@@ -1,50 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Kata;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class SumStringsAsNumbersTest
+	public class SumStringsAsNumbersTest
     {
         private SumStringsAsNumbers _kata;
 
-        [TestInitialize]
-        public void Init()
+        public SumStringsAsNumbersTest()
         {
             _kata = new SumStringsAsNumbers();
         }
 
-        [TestMethod]
+        [Fact]
         public void SingleDigit()
         {
-            Assert.AreEqual("3",_kata.Sum("1","2"));
+            Assert.Equal("3",_kata.Sum("1","2"));
         }
 
-        [TestMethod]
+        [Fact]
         public void NoCarryOver()
         {
-            Assert.AreEqual("468", _kata.Sum("123", "345"));
+            Assert.Equal("468", _kata.Sum("123", "345"));
         }
 
-        [TestMethod]
+        [Fact]
         public void CarryOver()
         {
-            Assert.AreEqual("1998",_kata.Sum("999","999"));
+            Assert.Equal("1998",_kata.Sum("999","999"));
         }
 
-        [TestMethod]
+        [Fact]
         public void LengthPlusOne()
         {
-            Assert.AreEqual("1033",_kata.Sum("511","522"));
+            Assert.Equal("1033",_kata.Sum("511","522"));
         }
 
-        [TestMethod]
+        [Fact]
         public void UnequalLength()
         {
-            Assert.AreEqual("12346",_kata.Sum("1","12345"));
+            Assert.Equal("12346",_kata.Sum("1","12345"));
         }
 
     }

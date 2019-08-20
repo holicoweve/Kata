@@ -1,39 +1,40 @@
 ﻿using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class ContainsDuplicateTwoTest
-    {
-        private ContainsDuplicateTwo _kata;
 
-        [TestInitialize]
-        public void init()
-        {
-            _kata = new ContainsDuplicateTwo();
-        }
+	public class ContainsDuplicateTwoTest
+	{
+		private ContainsDuplicateTwo _kata;
 
-        [TestMethod]
-        public void SimpleTest()
-        {
-            Assert.AreEqual(true,_kata.ContainsNearbyDuplicate(new []{1,2,3,1},3));
-            Assert.AreEqual(true,_kata.ContainsNearbyDuplicate(new []{1,0,1,1},1));
-            Assert.AreEqual(false,_kata.ContainsNearbyDuplicate(new []{1,2,3,1,2,3},2));
-        }
+		public ContainsDuplicateTwoTest()
+		{
+			_kata = new ContainsDuplicateTwo();
+		}
 
-        [TestMethod]
-        public void LargeKTest()
-        {
-            Assert.AreEqual(true,_kata.ContainsNearbyDuplicate(new []{1,2,3,1},5));
-        }
+		[Theory]
+		[InlineData(new[] { 1, 2, 3, 1 }, 3, true)]
+		[InlineData(new[] { 1, 0, 1, 1 }, 1, true)]
+		[InlineData(new[] { 1, 2, 3, 1, 2, 3 }, 2, false)]
+		public void SimpleTest(int[] inputs, int output, bool expected)
+		{
+			Assert.Equal(expected, _kata.ContainsNearbyDuplicate(inputs, output));
 
-        [TestMethod]
-        public void NoDuplicateTest()
-        {
-            var kata = new ContainsDuplicateTwo();
+		}
 
-            Assert.AreEqual(false,_kata.ContainsNearbyDuplicate(new []{1,2,3,4},3));
-        }
-    }
+		[Theory]
+		[InlineData(new[] { 1, 2, 3, 1 }, 5, true)]
+		public void LargeKTest(int[] inputs, int output, bool expected)
+		{
+			Assert.Equal(expected, _kata.ContainsNearbyDuplicate(inputs, output));
+		}
+
+		[Theory]
+		[InlineData(new[] { 1, 2, 3, 4 }, 3, false)]
+		public void NoDuplicateTest(int[] inputs, int output, bool expected)
+		{
+			Assert.Equal(expected, _kata.ContainsNearbyDuplicate(inputs, output));
+		}
+	}
 }

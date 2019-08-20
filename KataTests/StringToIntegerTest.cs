@@ -1,21 +1,18 @@
 ﻿using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Xunit;
 
 namespace KataTests
 {
-	[TestClass]
 	public class StringToIntegerTest
 	{
 		private StringToIntegerAtoi _kata;
 
-		[TestInitialize]
-		public void Init()
+		public StringToIntegerTest()
 		{
 			_kata = new StringToIntegerAtoi();
 		}
 
-		[TestMethod]
+		[Fact]
 		public void PositiveInteger()
 		{
 			var input = "42";
@@ -23,10 +20,10 @@ namespace KataTests
 			var expected = 42;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void NegativeInteger()
 		{
 			var input = "-42";
@@ -34,10 +31,10 @@ namespace KataTests
 			var expected = -42;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LeadingWhiteSpace()
 		{
 			var input = "      -42";
@@ -45,10 +42,10 @@ namespace KataTests
 			var expected = -42;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void TrailingWords()
 		{
 			var input = "4193 with words";
@@ -56,10 +53,10 @@ namespace KataTests
 			var expected = 4193;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LeadingWords()
 		{
 			var input = "words and 987";
@@ -67,10 +64,10 @@ namespace KataTests
 			var expected = 0;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LessThanIntMin()
 		{
 			var input = "-91283472332";
@@ -78,10 +75,10 @@ namespace KataTests
 			var expected = -2147483648;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LessThanIntMin2()
 		{
 			var input = "-2147483647";
@@ -89,10 +86,10 @@ namespace KataTests
 			var expected = -2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void VeryLargeNumber()
 		{
 			var input = "20000000000000000000";
@@ -100,10 +97,10 @@ namespace KataTests
 			var expected = 2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void VeryVeryLargeNumber()
 		{
 			var input = "1234567890123456789012345678901234567890";
@@ -111,7 +108,7 @@ namespace KataTests
 			var expected = 2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 	}
 }

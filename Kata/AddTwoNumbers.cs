@@ -16,48 +16,48 @@ namespace Kata
 			l1 = l1 ?? new ListNode(0);
 			l2 = l2 ?? new ListNode(0);
 
-			var newVal = l1.val + l2.val + (carry ? 1 : 0);
+			var newVal = l1.Val + l2.Val + (carry ? 1 : 0);
 			var nextCarry = newVal >= 10;
 
-			return new ListNode(newVal % 10) { next = Add(l1.next, l2.next, nextCarry) };
+			return new ListNode(newVal % 10) { Next = Add(l1.Next, l2.Next, nextCarry) };
 		}
 	}
 
 	public class ListNode
 	{
-		public int val;
-		public ListNode next;
+		public int Val { get; }
+		public ListNode Next { get; set; }
 
 		public ListNode(int x)
 		{
-			val = x;
+			Val = x;
 		}
 
 		public override string ToString()
 		{
-			if (next != null)
+			if (Next != null)
 			{
-				return val + "->" + next;
+				return Val + "->" + Next;
 			}
 
-			return val.ToString();
+			return Val.ToString();
 		}
 
-		public override bool Equals(object other)
+		public override bool Equals(object obj)
 		{
-			if (!(other is ListNode otherListNode))
+			if (!(obj is ListNode otherListNode))
 				return false;
 
-			if (!val.Equals(otherListNode.val))
+			if (!Val.Equals(otherListNode.Val))
 				return false;
 
-			if (next == null && otherListNode.next == null)
+			if (Next == null && otherListNode.Next == null)
 				return true;
 
-			if ((next == null) != (otherListNode.next == null))
+			if ((Next == null) != (otherListNode.Next == null))
 				return false;
 
-			return next.Equals(otherListNode.next);
+			return Next.Equals(otherListNode.Next);
 		}
 	}
 }

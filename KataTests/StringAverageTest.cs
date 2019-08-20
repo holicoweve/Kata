@@ -1,87 +1,83 @@
 using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class StringAverageTest
-    {
-        private StringAverage _kata;
+	public class StringAverageTest
+	{
+		private StringAverage _kata;
 
-        [TestInitialize]
-        public void init()
-        {
-            _kata = new StringAverage();
-        }
+		public StringAverageTest()
+		{
+			_kata = new StringAverage();
+		}
 
-        [DataTestMethod]
-        [DataRow("one", "one")]
-        [DataRow("two", "two")]
-        public void SingleInputTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
+		[Theory]
+		[InlineData("one", "one")]
+		[InlineData("two", "two")]
+		public void SingleInputTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
 
-        [DataTestMethod]
-        [DataRow("zero nine five two", "four")]
-        [DataRow("four six two three", "three")]
-        [DataRow("one two three four five", "three")]
-        public void ComplexTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
+		[Theory]
+		[InlineData("zero nine five two", "four")]
+		[InlineData("four six two three", "three")]
+		[InlineData("one two three four five", "three")]
+		public void ComplexTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
 
-        [DataTestMethod]
-        [DataRow("five four", "four")]
-        public void RoundDownTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
+		[Theory]
+		[InlineData("five four", "four")]
+		public void RoundDownTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
 
-        [DataTestMethod]
-        [DataRow("one one eight one", "two")]
-        public void SomeRepeatedElementTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
+		[Theory]
+		[InlineData("one one eight one", "two")]
+		public void SomeRepeatedElementTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
 
-        [DataTestMethod]
-        [DataRow("zero zero zero zero zero", "zero")]
-        public void AllZeroInputTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
+		[Theory]
+		[InlineData("zero zero zero zero zero", "zero")]
+		public void AllZeroInputTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
 
-        [DataTestMethod]
-        [DataRow(" ", "n/a")]
-        public void EmptyInputTest(string input, string expected)
-        {
-            Assert.AreEqual(expected, _kata.AverageString(input));
-        }
-    }
+		[Theory]
+		[InlineData(" ", "n/a")]
+		public void EmptyInputTest(string input, string expected)
+		{
+			Assert.Equal(expected, _kata.AverageString(input));
+		}
+	}
 
-    [TestClass]
-    public class ExtensionsTest
-    {
-        [DataTestMethod]
-        [DataRow(0, "zero")]
-        [DataRow(1, "one")]
-        [DataRow(2, "two")]
-        [DataRow(9, "nine")]
-        public void IntToStringTest(int input, string expected)
-        {
-            Assert.AreEqual(expected, input.IntToText());
-        }
+	public class ExtensionsTest
+	{
+		[Theory]
+		[InlineData(0, "zero")]
+		[InlineData(1, "one")]
+		[InlineData(2, "two")]
+		[InlineData(9, "nine")]
+		public void IntToStringTest(int input, string expected)
+		{
+			Assert.Equal(expected, input.IntToText());
+		}
 
-
-        [DataTestMethod]
-        [DataRow("zero", 0)]
-        [DataRow("one", 1)]
-        [DataRow("two", 2)]
-        [DataRow("nine", 9)]
-        public void StringToIntTest(string input, int expected)
-        {
-            Assert.AreEqual(expected, input.TextToInt());
-        }
-    }
+		[Theory]
+		[InlineData("zero", 0)]
+		[InlineData("one", 1)]
+		[InlineData("two", 2)]
+		[InlineData("nine", 9)]
+		public void StringToIntTest(string input, int expected)
+		{
+			Assert.Equal(expected, input.TextToInt());
+		}
+	}
 }

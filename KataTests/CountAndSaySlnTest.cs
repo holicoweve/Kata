@@ -1,39 +1,39 @@
 ﻿using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KataTests
 {
-	[TestClass]
+
 	public class CountAndSaySlnTest
 	{
 		private CountAndSaySln _kata;
 
-		[TestInitialize]
-		public void Init()
+
+		public CountAndSaySlnTest()
 		{
 			_kata = new CountAndSaySln();
 		}
 
-		[DataTestMethod]
-		[DataRow(1, "1")]
-		[DataRow(2, "11")]
-		[DataRow(3, "21")]
-		[DataRow(4, "1211")]
-		[DataRow(5, "111221")]
+		[Theory]
+		[InlineData(1, "1")]
+		[InlineData(2, "11")]
+		[InlineData(3, "21")]
+		[InlineData(4, "1211")]
+		[InlineData(5, "111221")]
 		public void CountAndSayTest(int n, string expected)
 		{
 			var actual = _kata.CountAndSay(n);
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void SayTest()
 		{
 			var input = "11";
 			var expected = "21";
 
 			var actual = _kata.Say(input);
-			Assert.AreEqual(expected, actual);
+			Assert.Equal(expected, actual);
 		}
 	}
 }

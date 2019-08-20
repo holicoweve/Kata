@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class ThreeSumKataTest
+	public class ThreeSumKataTest
     {
         private ThreeSumKata _kata;
 
-        [TestInitialize]
-        public void Init()
+        public ThreeSumKataTest()
         {
             _kata = new ThreeSumKata();
         }
 
-        [TestMethod]
+        [Fact]
         public void SimpleTest()
         {
             var expected = Flatten(new List<IList<int>> { new List<int> { -1, 0, 1 }, new List<int>() { -1, -1, 2 } });
             var actual = Flatten(_kata.ThreeSum(new int[] { -1, 0, 1, 2, -1, -4 }));
 
-            CollectionAssert.AreEquivalent(expected, actual);
+            Assert.Equal(expected, actual);
         }
 
         public List<string> Flatten(IList<IList<int>> nestedList)

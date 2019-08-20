@@ -1,47 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Kata;
+using Xunit;
 
 namespace KataTests
 {
-    [TestClass]
-    public class CountNumberOfDuplicateTest
-    {
-        private CountNumberOfDuplicate _kata;
 
-        [TestInitialize]
-        public void init()
-        {
-            _kata = new CountNumberOfDuplicate();;
-        }
+	public class CountNumberOfDuplicateTest
+	{
+		private CountNumberOfDuplicate _kata;
 
-        [TestMethod]
-        public void EmptyStringTest()
-        {
-            Assert.AreEqual(0, _kata.DuplicateCount(""));
-        }
+		public CountNumberOfDuplicateTest()
+		{
+			_kata = new CountNumberOfDuplicate(); ;
+		}
 
-        [TestMethod]
-        public void NoDuplicateTest()
-        {
-            Assert.AreEqual(0, _kata.DuplicateCount("abcde"));
-        }
+		[Fact]
+		public void EmptyStringTest()
+		{
+			Assert.Equal(0, _kata.DuplicateCount(""));
+		}
 
-        [TestMethod]
-        public void CapitalTest()
-        {
-            Assert.AreEqual(2, _kata.DuplicateCount("aabBcde"), "should ignore case");
-        }
+		[Fact]
+		public void NoDuplicateTest()
+		{
+			Assert.Equal(0, _kata.DuplicateCount("abcde"));
+		}
 
-        [TestMethod]
-        public void SimpleTest()
-        {
-            Assert.AreEqual(2, _kata.DuplicateCount("aabbcde"));
-            Assert.AreEqual(1, _kata.DuplicateCount("Indivisibility"));
-            Assert.AreEqual(2, _kata.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
-        }
+		[Fact]
+		public void CapitalTest()
+		{
+			Assert.Equal(2, _kata.DuplicateCount("aabBcde"));
+		}
 
-    }
+		[Fact]
+		public void SimpleTest()
+		{
+			Assert.Equal(2, _kata.DuplicateCount("aabbcde"));
+			Assert.Equal(1, _kata.DuplicateCount("Indivisibility"));
+			Assert.Equal(2, _kata.DuplicateCount("Indivisibilities"));
+		}
+
+	}
 }

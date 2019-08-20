@@ -8,7 +8,7 @@ namespace CustomSourceTemplate
         [Macro(Target = "expected", Editable = 1)]
         public static void ae<T>(this T source)
         {
-            /*$ Assert.AreEqual( $expected$ , source);*/
+            /*$ Assert.Equal( $expected$ , source);*/
         }
 
         [JetBrains.Annotations.SourceTemplateAttribute]

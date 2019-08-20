@@ -1,43 +1,40 @@
-﻿using System;
-using Kata;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Kata;
+using Xunit;
 
 namespace KataTests
 {
-	[TestClass]
 	public class DeadAntsTest
 	{
 		private DeadAnts _deadAnts;
 
-		[TestInitialize]
-		public void Init()
+		public DeadAntsTest()
 		{
 			_deadAnts = new DeadAnts(); ;
 		}
 
-		[TestMethod]
+		[Fact]
 		public void BasicTest()
 		{
-			Assert.AreEqual(2, _deadAnts.DeadAntsCount("ant anantt aantnt"));
+			Assert.Equal(2, _deadAnts.DeadAntsCount("ant anantt aantnt"));
 
 		}
 
-		[TestMethod]
+		[Fact]
 		public void OtherCharacterTest()
 		{
-			Assert.AreEqual(1, _deadAnts.DeadAntsCount("ant ant .... a nt"));
+			Assert.Equal(1, _deadAnts.DeadAntsCount("ant ant .... a nt"));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void NullInputTest()
 		{
-			Assert.AreEqual(0, _deadAnts.DeadAntsCount(null));
+			Assert.Equal(0, _deadAnts.DeadAntsCount(null));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void AllAliveTest()
 		{
-			Assert.AreEqual(0, _deadAnts.DeadAntsCount("ant ant ant ant"));
+			Assert.Equal(0, _deadAnts.DeadAntsCount("ant ant ant ant"));
 		}
 	}
 }
