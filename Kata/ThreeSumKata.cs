@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Kata
 {
 	/// <summary>
-	/// Kata - Three Sums
-	///
-	/// Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
-	/// Find all unique triplets in the array which gives the sum of zero.
-	///
-	/// Note:
-	/// The solution set must not contain duplicate triplets.
-	///
-	/// Example:
-	/// Given array nums = [-1, 0, 1, 2, -1, -4],
-	///
-	/// A solution set is:
-	/// [
-	///   [-1, 0, 1],
-	///   [-1, -1, 2]
-	/// ]
+	///     Kata - Three Sums
+	///     Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
+	///     Find all unique triplets in the array which gives the sum of zero.
+	///     Note:
+	///     The solution set must not contain duplicate triplets.
+	///     Example:
+	///     Given array nums = [-1, 0, 1, 2, -1, -4],
+	///     A solution set is:
+	///     [
+	///     [-1, 0, 1],
+	///     [-1, -1, 2]
+	///     ]
 	/// </summary>
 	public class ThreeSumKata
 	{
@@ -45,7 +39,7 @@ namespace Kata
 						var kValue = inputs[k];
 						if (kValue == jTarget)
 						{
-							var solution = new List<int>() { iValue, jValue, kValue };
+							var solution = new List<int> { iValue, jValue, kValue };
 							solution.Sort();
 							if (!solutions.Exists(x => x.SequenceEqual(solution)))
 								solutions.Add(solution);
@@ -53,6 +47,7 @@ namespace Kata
 					}
 				}
 			}
+
 			return solutions;
 		}
 	}

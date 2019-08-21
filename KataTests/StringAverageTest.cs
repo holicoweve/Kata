@@ -1,4 +1,5 @@
 using Kata;
+using Kata.obj;
 using Xunit;
 
 namespace KataTests

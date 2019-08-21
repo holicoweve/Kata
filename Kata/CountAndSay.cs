@@ -4,11 +4,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 [assembly: InternalsVisibleTo("KataTests")]
+
 namespace Kata
 {
 	/// <summary>
-	/// Count And Say
-	/// https://leetcode.com/problems/count-and-say/
+	///     Count And Say
+	///     https://leetcode.com/problems/count-and-say/
 	/// </summary>
 	public class CountAndSaySln
 	{
@@ -32,6 +33,7 @@ namespace Kata
 				sb.Append(i.Length);
 				sb.Append(i[0]);
 			}
+
 			return sb.ToString();
 		}
 	}
