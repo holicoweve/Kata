@@ -1,5 +1,4 @@
 ﻿using Kata;
-using Kata.obj;
 using Xunit;
 
 namespace KataTests
@@ -14,7 +13,7 @@ namespace KataTests
 		}
 
 		[Fact]
-		public void Test_TwoZero()
+        public void Test_TwoZero()
 		{
 			var l1 = new ListNode(0);
 			var l2 = new ListNode(0);

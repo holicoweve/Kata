@@ -1,6 +1,5 @@
 ﻿using Castle.Core.Logging;
 using Kata;
-using Kata.obj;
 using Xunit;
 using Xunit.Sdk;
 
