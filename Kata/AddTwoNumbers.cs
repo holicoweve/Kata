@@ -1,6 +1,4 @@
-﻿
-
-namespace Kata
+﻿namespace Kata
 {
     public class AddTwoNumbers
     {
@@ -14,35 +12,39 @@ namespace Kata
             var newVal = l1.Val + l2.Val + (carry ? 1 : 0);
             var nextCarry = newVal >= 10;
 
-            return new ListNode(newVal % 10) { Next = Add(l1.Next, l2.Next, nextCarry) };
+            return new ListNode(newVal % 10) {Next = Add(l1.Next, l2.Next, nextCarry)};
         }
     }
-
 
     public class ListNode
     {
         public int Val;
         public ListNode Next;
-        public ListNode(int x) { Val = x; }
+
+        public ListNode(int x)
+        {
+            Val = x;
+        }
 
         public override bool Equals(object obj)
         {
             var otherNode = obj as ListNode;
-            if(Val != otherNode.Val)
+            if (Val != otherNode.Val)
             {
                 return false;
             }
-            if(Next == null)
+
+            if (Next == null)
             {
-                return otherNode.Next==null;
+                return otherNode.Next == null;
             }
-            if(otherNode.Next==null)
+
+            if (otherNode.Next == null)
             {
-                return Next==null;
+                return Next == null;
             }
 
             return Next.Equals(otherNode.Next);
         }
     }
-
 }
