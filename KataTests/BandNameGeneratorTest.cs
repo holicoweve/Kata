@@ -1,40 +1,42 @@
 ﻿using Kata;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace KataTests
 {
-
+    [TestFixture]
     public class BandNameGeneratorTest
     {
         private BandNameGeneratorKata _kata;
 
-        public BandNameGeneratorTest()
+        [SetUp]
+        public void Setup()
         {
             _kata = new BandNameGeneratorKata();
         }
 
-        [Fact]
+        [Test]
         public void TheKnifeTest()
         {
-            Assert.Equal("The Knife", _kata.BandNameGenerator("knife"));
+            Assert.AreEqual("The Knife", _kata.BandNameGenerator("knife"));
         }
 
-        [Fact]
+        [Test]
         public void TheBedTest()
         {
-            Assert.Equal("The Bed", _kata.BandNameGenerator("bed"));
+            Assert.AreEqual("The Bed", _kata.BandNameGenerator("bed"));
         }
 
-        [Fact]
+        [Test]
         public void TartartTest()
         {
-            Assert.Equal("Tartart", _kata.BandNameGenerator("tart"));
+            Assert.AreEqual("Tartart", _kata.BandNameGenerator("tart"));
         }
 
-        [Fact]
+        [Test]
         public void SandlesandlestTest()
         {
-            Assert.Equal("Sandlesandles", _kata.BandNameGenerator("sandles"));
+            Assert.AreEqual("Sandlesandles", _kata.BandNameGenerator("sandles"));
         }
     }
 }

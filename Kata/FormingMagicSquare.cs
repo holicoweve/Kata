@@ -32,9 +32,24 @@ namespace Kata
 			return result;
 		}
 
+		private int[,] RotateSquareClockwise(int[,] inputSquare)
+		{
+			var size = inputSquare.GetLength(0);
+
+			var result = new int[size, size];
+
+			for (var i = 0; i < size; i++)
+			{
+				result[0, i] = inputSquare[i, 2];
+				result[2, i] = inputSquare[i, 2];
+			}
+			return result;
+		}
+
 		internal bool IsMagicSquare(int[,] inputSquare)
 		{
-			for (var i = 0; i < 3; i++)
+			var size = inputSquare.GetLength(0);
+			for (var i = 0; i < size; i++)
 			{
 				if (ColumnSum(inputSquare, i) != 15)
 				{
@@ -86,7 +101,7 @@ namespace Kata
 
 		internal int CalculateCost(int[,] inputSquare, int[,] targetSquare)
 		{
-			if (inputSquare.GetLength(0)!=targetSquare.GetLength(0) || inputSquare.GetLength(1)!=targetSquare.GetLength(1))
+			if (inputSquare.GetLength(0) != targetSquare.GetLength(0) || inputSquare.GetLength(1) != targetSquare.GetLength(1))
 			{
 				throw new ArgumentException("The magic squares are not the same size");
 			}
