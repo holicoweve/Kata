@@ -18,15 +18,15 @@ namespace Kata
 		{
 			var reverseDictionary = new Dictionary<int, int>();
 
-			for (var currIndex = 0; currIndex < inputs.Length; currIndex++)
+			for (var currentIndex = 0; currentIndex < inputs.Length; currentIndex++)
 			{
-				var currValue = inputs[currIndex];
-				var diff = target - currValue;
-				if (reverseDictionary.ContainsKey(currValue))
+				var currentValue = inputs[currentIndex];
+				var diff = target - currentValue;
+				if (reverseDictionary.ContainsKey(currentValue))
 				{
 					// pair found
-					var firstIndex = reverseDictionary[currValue];
-					return new[] { firstIndex, currIndex };
+					var firstIndex = reverseDictionary[currentValue];
+					return new[] { firstIndex, currentIndex };
 				}
 
 				if (reverseDictionary.ContainsKey(diff))
@@ -36,7 +36,7 @@ namespace Kata
 				else
 				{
 					// pair not found, put current diff into dictionary as key, and current index as value
-					reverseDictionary.Add(diff, currIndex);
+					reverseDictionary.Add(diff, currentIndex);
 				}
 			}
 
