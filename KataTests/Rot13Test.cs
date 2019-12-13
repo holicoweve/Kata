@@ -1,51 +1,53 @@
 ﻿using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class Rot13Test
 	{
 		private Rot13 _kata;
 
-		public Rot13Test()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new Rot13();
 		}
 
-		[Fact]
+		[Test]
 		public void DoubleRot13GivesInputText()
 		{
-			Assert.Equal("aBcDeFg", _kata.Encode(_kata.Encode("aBcDeFg")));
+			Assert.AreEqual("aBcDeFg", _kata.Encode(_kata.Encode("aBcDeFg")));
 		}
 
-		[Fact]
+		[Test]
 		public void UpperCaseOnly()
 		{
-			Assert.Equal("TEST", _kata.Encode("GRFG"));
+			Assert.AreEqual("TEST", _kata.Encode("GRFG"));
 		}
 
-		[Fact]
+		[Test]
 		public void LowerCaseOnly()
 		{
-			Assert.Equal("test", _kata.Encode("grfg"));
+			Assert.AreEqual("test", _kata.Encode("grfg"));
 		}
 
-		[Fact]
+		[Test]
 		public void MixCases()
 		{
-			Assert.Equal("TESTtest", _kata.Encode("GRFGgrfg"));
+			Assert.AreEqual("TESTtest", _kata.Encode("GRFGgrfg"));
 		}
 
-		[Fact]
+		[Test]
 		public void NumbersShouldBeUnaffected()
 		{
-			Assert.Equal("123", _kata.Encode("123"));
+			Assert.AreEqual("123", _kata.Encode("123"));
 		}
 
-		[Fact]
+		[Test]
 		public void SpaceShouldBeUnaffected()
 		{
-			Assert.Equal(" ", _kata.Encode(" "));
+			Assert.AreEqual(" ", _kata.Encode(" "));
 		}
 	}
 }

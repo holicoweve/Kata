@@ -1,49 +1,51 @@
 ﻿using System;
 using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class ProductOfArrayItemsTest
     {
         private ProductOfArrayItems _kata;
 
-        public ProductOfArrayItemsTest()
+        [SetUp]
+        public void Setup()
         {
             _kata = new ProductOfArrayItems();
         }
 
-        [Fact]
+        [Test]
         public void NegativeInputTest()
         {
-            Assert.Equal(-672, _kata.Product(new int[] { -2, 6, 7, 8 }));
+            Assert.AreEqual(-672, _kata.Product(new int[] { -2, 6, 7, 8 }));
         }
 
-        [Fact]
+        [Test]
         public void ZeroInInputTest()
         {
-            Assert.Equal(0, _kata.Product(new int[] { 0, 2, 9, 7 }));
+            Assert.AreEqual(0, _kata.Product(new int[] { 0, 2, 9, 7 }));
         }
 
-        [Fact]
+        [Test]
         public void SingleInputTest()
         {
-            Assert.Equal(10, _kata.Product(new int[] { 10 }));
+            Assert.AreEqual(10, _kata.Product(new int[] { 10 }));
         }
 
-        [Fact]
+        [Test]
         public void PositiveInputTest()
         {
-            Assert.Equal(540, _kata.Product(new int[] { 5, 4, 1, 3, 9 }));
+            Assert.AreEqual(540, _kata.Product(new int[] { 5, 4, 1, 3, 9 }));
         }
 
-        [Fact]
+        [Test]
         public void TestNullArray()
         {
 	        Assert.Throws<ArgumentNullException>(()=>_kata.Product(null));
         }
 
-        [Fact]
+        [Test]
         public void TestEmptyArray()
         {
 	        Assert.Throws<InvalidOperationException>(()=>_kata.Product(new int[0]));

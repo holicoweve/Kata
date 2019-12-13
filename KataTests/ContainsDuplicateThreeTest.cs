@@ -1,39 +1,41 @@
 ﻿using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class ContainsDuplicateThreeTest
 	{
 		private ContainsDuplicateThree _kata;
 
-		public ContainsDuplicateThreeTest()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new ContainsDuplicateThree();
 		}
 
-		[Fact]
+		[Test]
 		public void ZeroTTest()
 		{
-			Assert.True(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 2, 3, 1 }, 3, 0));
+			Assert.IsTrue(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 2, 3, 1 }, 3, 0));
 		}
 
-		[Fact]
+		[Test]
 		public void AlmostAllOneTest()
 		{
-			Assert.True(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 0, 1, 1 }, 1, 2));
+			Assert.IsTrue(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 0, 1, 1 }, 1, 2));
 		}
 
-		[Fact]
+		[Test]
 		public void NoSolutionTest()
 		{
-			Assert.False(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 5, 9, 1, 5, 9 }, 2, 3));
+			Assert.IsFalse(_kata.ContainsNearbyAlmostDuplicate(new int[] { 1, 5, 9, 1, 5, 9 }, 2, 3));
 		}
 
-		[Fact]
+		[Test]
 		public void IntMinValueTest()
 		{
-			Assert.False(_kata.ContainsNearbyAlmostDuplicate(new int[] { -1, 2147483647 }, 1, 2147483647));
+			Assert.IsFalse(_kata.ContainsNearbyAlmostDuplicate(new int[] { -1, 2147483647 }, 1, 2147483647));
 		}
 	}
 }

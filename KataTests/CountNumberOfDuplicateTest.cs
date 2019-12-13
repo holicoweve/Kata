@@ -1,42 +1,44 @@
 ﻿using Kata;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace KataTests
 {
-
+	[TestFixture]
 	public class CountNumberOfDuplicateTest
 	{
 		private CountNumberOfDuplicate _kata;
-
-		public CountNumberOfDuplicateTest()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new CountNumberOfDuplicate(); ;
 		}
 
-		[Fact]
+		[Test]
 		public void EmptyStringTest()
 		{
-			Assert.Equal(0, _kata.DuplicateCount(""));
+			Assert.AreEqual(0, _kata.DuplicateCount(""));
 		}
 
-		[Fact]
+		[Test]
 		public void NoDuplicateTest()
 		{
-			Assert.Equal(0, _kata.DuplicateCount("abcde"));
+			Assert.AreEqual(0, _kata.DuplicateCount("abcde"));
 		}
 
-		[Fact]
+		[Test]
 		public void CapitalTest()
 		{
-			Assert.Equal(2, _kata.DuplicateCount("aabBcde"));
+			Assert.AreEqual(2, _kata.DuplicateCount("aabBcde"));
 		}
 
-		[Fact]
-		public void SimpleTest()
+		[Test]
+		[TestCase("aabbcde",2)]
+		[TestCase("Indivisibility",1)]
+		[TestCase("Indivisibilities",2)]
+		public void SimpleTest(string input, int expected)
 		{
-			Assert.Equal(2, _kata.DuplicateCount("aabbcde"));
-			Assert.Equal(1, _kata.DuplicateCount("Indivisibility"));
-			Assert.Equal(2, _kata.DuplicateCount("Indivisibilities"));
+			Assert.AreEqual(expected, _kata.DuplicateCount(input));
 		}
 
 	}

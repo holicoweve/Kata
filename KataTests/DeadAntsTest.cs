@@ -1,40 +1,43 @@
 ﻿using Kata;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class DeadAntsTest
 	{
 		private DeadAnts _deadAnts;
 
-		public DeadAntsTest()
+		[SetUp]
+		public void Setup()
 		{
 			_deadAnts = new DeadAnts(); ;
 		}
 
-		[Fact]
+		[Test]
 		public void BasicTest()
 		{
-			Assert.Equal(2, _deadAnts.DeadAntsCount("ant anantt aantnt"));
+			Assert.AreEqual(2, _deadAnts.DeadAntsCount("ant anantt aantnt"));
 
 		}
 
-		[Fact]
+		[Test]
 		public void OtherCharacterTest()
 		{
-			Assert.Equal(1, _deadAnts.DeadAntsCount("ant ant .... a nt"));
+			Assert.AreEqual(1, _deadAnts.DeadAntsCount("ant ant .... a nt"));
 		}
 
-		[Fact]
+		[Test]
 		public void NullInputTest()
 		{
-			Assert.Equal(0, _deadAnts.DeadAntsCount(null));
+			Assert.AreEqual(0, _deadAnts.DeadAntsCount(null));
 		}
 
-		[Fact]
+		[Test]
 		public void AllAliveTest()
 		{
-			Assert.Equal(0, _deadAnts.DeadAntsCount("ant ant ant ant"));
+			Assert.AreEqual(0, _deadAnts.DeadAntsCount("ant ant ant ant"));
 		}
 	}
 }

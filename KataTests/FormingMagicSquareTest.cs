@@ -1,38 +1,41 @@
 ﻿using System;
 using System.Linq;
 using Kata;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class FormingMagicSquareTest
 	{
 		private FormingMagicSquare _kata;
 
-		public FormingMagicSquareTest()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new FormingMagicSquare();
 		}
 
-		[Fact]
+		[Test]
 		public void ValidMagicSquareCanPassValidator()
 		{
 			var validMagicSquareSequence = new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 };
 			var isMagicSquare = _kata.IsMagicSquare(_kata.ParseArrayToSquare(validMagicSquareSequence));
 
-			Assert.True(isMagicSquare);
+			Assert.IsTrue(isMagicSquare);
 		}
 
-		[Fact]
+		[Test]
 		public void InvalidMagicSquareCannotPassValidator()
 		{
 			var invalidMagicSquareSequence = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 			var isMagicSquare = _kata.IsMagicSquare(_kata.ParseArrayToSquare(invalidMagicSquareSequence));
 
-			Assert.False(isMagicSquare);
+			Assert.IsFalse(isMagicSquare);
 		}
 
-		[Fact]
+		[Test]
 		public void SameMagicSquaresCostEqualsZero()
 		{
 			var targetSquare = _kata.ParseArrayToSquare( new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
@@ -41,10 +44,10 @@ namespace KataTests
 			var expected = 0;
 			var actual = _kata.CalculateCost(inputSquare, targetSquare);
 			
-			Assert.Equal(expected,actual);
+			Assert.AreEqual(expected,actual);
 		}
 
-		[Fact]
+		[Test]
 		public void MagicSquaresOffByOneCostEqualsOne()
 		{
 			var targetSquare = _kata.ParseArrayToSquare( new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
@@ -53,7 +56,7 @@ namespace KataTests
 			var expected = 1;
 			var actual = _kata.CalculateCost(inputSquare, targetSquare);
 			
-			Assert.Equal(expected,actual);
+			Assert.AreEqual(expected,actual);
 		}
 	}
 }

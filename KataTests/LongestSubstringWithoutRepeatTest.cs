@@ -1,19 +1,20 @@
 ﻿using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
-
+	[TestFixture]
 	public class LongestSubstringWithoutRepeatTest
 	{
 		private LongestSubstringWithoutRepeat _kata;
 
-		public LongestSubstringWithoutRepeatTest()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new LongestSubstringWithoutRepeat();
 		}
 
-		[Fact]
+		[Test]
 		public void SameChars()
 		{
 			var input = "bbbbb";
@@ -21,30 +22,30 @@ namespace KataTests
 			var actual = _kata.Length(input);
 
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void AnswerInBeginning()
 		{
 			var input = "abcabcbb";
 			var expected = 3;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void AnswerInMiddle()
 		{
 			var input = "pwwkew";
 			var expected = 3;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void OneSpace()
 		{
 			var input = " ";
@@ -52,47 +53,47 @@ namespace KataTests
 			var actual = _kata.Length(input);
 
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 		
-		[Fact]
+		[Test]
 		public void OneChar()
 		{
 			var input = "a";
 			var expected = 1;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void FullLength()
 		{
 			var input = "abc";
 			var expected = 3;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void AnswerAtEnd()
 		{
 			var input = "abcabcdefghi";
 			var expected = 9;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void RepeatAtEnd()
 		{
 			var input = "abcda";
 			var expected = 4;
 			var actual = _kata.Length(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }

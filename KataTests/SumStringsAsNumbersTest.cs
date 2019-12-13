@@ -1,45 +1,47 @@
 ﻿using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class SumStringsAsNumbersTest
     {
         private SumStringsAsNumbers _kata;
 
-        public SumStringsAsNumbersTest()
+        [SetUp]
+        public void Setup()
         {
             _kata = new SumStringsAsNumbers();
         }
 
-        [Fact]
+        [Test]
         public void SingleDigit()
         {
-            Assert.Equal("3",_kata.Sum("1","2"));
+            Assert.AreEqual("3",_kata.Sum("1","2"));
         }
 
-        [Fact]
+        [Test]
         public void NoCarryOver()
         {
-            Assert.Equal("468", _kata.Sum("123", "345"));
+            Assert.AreEqual("468", _kata.Sum("123", "345"));
         }
 
-        [Fact]
+        [Test]
         public void CarryOver()
         {
-            Assert.Equal("1998",_kata.Sum("999","999"));
+            Assert.AreEqual("1998",_kata.Sum("999","999"));
         }
 
-        [Fact]
+        [Test]
         public void LengthPlusOne()
         {
-            Assert.Equal("1033",_kata.Sum("511","522"));
+            Assert.AreEqual("1033",_kata.Sum("511","522"));
         }
 
-        [Fact]
+        [Test]
         public void UnequalLength()
         {
-            Assert.Equal("12346",_kata.Sum("1","12345"));
+            Assert.AreEqual("12346",_kata.Sum("1","12345"));
         }
 
     }

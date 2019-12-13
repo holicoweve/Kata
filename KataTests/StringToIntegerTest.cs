@@ -1,5 +1,5 @@
 ﻿using Kata;
-using Xunit;
+using NUnit.Framework;
 
 namespace KataTests
 {
@@ -12,7 +12,7 @@ namespace KataTests
 			_kata = new StringToIntegerAtoi();
 		}
 
-		[Fact]
+		[Test]
 		public void PositiveInteger()
 		{
 			var input = "42";
@@ -20,10 +20,10 @@ namespace KataTests
 			var expected = 42;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void NegativeInteger()
 		{
 			var input = "-42";
@@ -31,10 +31,10 @@ namespace KataTests
 			var expected = -42;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void LeadingWhiteSpace()
 		{
 			var input = "      -42";
@@ -42,10 +42,10 @@ namespace KataTests
 			var expected = -42;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void TrailingWords()
 		{
 			var input = "4193 with words";
@@ -53,10 +53,10 @@ namespace KataTests
 			var expected = 4193;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void LeadingWords()
 		{
 			var input = "words and 987";
@@ -64,10 +64,10 @@ namespace KataTests
 			var expected = 0;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void LessThanIntMin()
 		{
 			var input = "-91283472332";
@@ -75,10 +75,10 @@ namespace KataTests
 			var expected = -2147483648;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void LessThanIntMin2()
 		{
 			var input = "-2147483647";
@@ -86,10 +86,10 @@ namespace KataTests
 			var expected = -2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void VeryLargeNumber()
 		{
 			var input = "20000000000000000000";
@@ -97,10 +97,10 @@ namespace KataTests
 			var expected = 2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void VeryVeryLargeNumber()
 		{
 			var input = "1234567890123456789012345678901234567890";
@@ -108,7 +108,7 @@ namespace KataTests
 			var expected = 2147483647;
 			var actual = _kata.Atoi(input);
 
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }

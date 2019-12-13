@@ -1,20 +1,21 @@
 ﻿using Castle.Core.Logging;
 using Kata;
-using Xunit;
-using Xunit.Sdk;
+using NUnit.Framework;
 
 namespace KataTests
 {
+	[TestFixture]
 	public class RemoveNthFromEndKataTest
 	{
-		public RemoveNthFromEndKataTest()
+		[SetUp]
+		public void Setup()
 		{
 			_kata = new RemoveNthFromEndKata();
 		}
 
-		private readonly RemoveNthFromEndKata _kata;
+		private RemoveNthFromEndKata _kata;
 
-		[Fact]
+		[Test]
 		public void SimpleTest()
 		{
 			var inputHead =
@@ -45,18 +46,18 @@ namespace KataTests
 					}
 				};
 			var actual = _kata.RemoveNthFromEnd(inputHead, n);
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
-		public void OneItemTtest()
+		[Test]
+		public void OneItemTest()
 		{
 			var inputHead = new ListNode(1);
 			var n = 1;
 
 			ListNode expected = null;
 			var actual = _kata.RemoveNthFromEnd(inputHead, n);
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }
