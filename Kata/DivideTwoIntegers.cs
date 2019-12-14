@@ -14,8 +14,16 @@ namespace Kata
             var quotient = 0;
             while (dividend >= divisor)
             {
-                dividend -= divisor;
-                quotient++;
+	            var multiplier = 1;
+	            var deduction = divisor;
+	            while (dividend > deduction<<1)
+	            {
+		            multiplier <<= 1;
+		            deduction <<= 1;
+	            }
+
+	            quotient += multiplier;
+	            dividend -= deduction;
             }
 
             return negate ? -quotient : quotient;
