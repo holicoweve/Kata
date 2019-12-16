@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
 	/// <summary>
 	/// Longest Substring Without Repeating Characters

@@ -1,4 +1,4 @@
-﻿using Kata;
+﻿using Kata.LeetCode.Medium;
 using NUnit.Framework;
 
 namespace KataTests

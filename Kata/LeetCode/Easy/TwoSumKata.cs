@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Kata
+namespace Kata.LeetCode.Easy
 {
 	/// <summary>
 	///     Kata - Two Sums

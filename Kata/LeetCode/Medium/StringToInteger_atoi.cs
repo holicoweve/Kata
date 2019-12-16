@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
 	/// <summary>
 	/// String to Integer (atoi)

@@ -1,4 +1,4 @@
-﻿namespace Kata
+﻿namespace Kata.CodeWars
 {
 	/// <summary>
 	///     Kata - Sum Strings as Numbers

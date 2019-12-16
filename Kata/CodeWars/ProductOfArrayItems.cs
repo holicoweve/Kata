@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata
+namespace Kata.CodeWars
 {
 	/// <summary>
 	///     Kata -Product of Array Items

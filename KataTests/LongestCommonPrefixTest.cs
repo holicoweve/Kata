@@ -1,4 +1,4 @@
-﻿using Kata;
+﻿using Kata.LeetCode.Easy;
 using NUnit.Framework;
 
 namespace KataTests
