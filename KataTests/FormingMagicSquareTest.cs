@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using Kata;
-using NUnit;
+﻿using Kata.HackerRank;
 using NUnit.Framework;
 
 namespace KataTests

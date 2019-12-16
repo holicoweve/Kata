@@ -5,11 +5,12 @@ using System.Text.RegularExpressions;
 
 [assembly: InternalsVisibleTo("KataTests")]
 
-namespace Kata
+namespace Kata.LeetCode.Easy
 {
 	/// <summary>
-	///     Count And Say
-	///     https://leetcode.com/problems/count-and-say/
+	/// 38. Count And Say
+	///
+	/// https://leetcode.com/problems/count-and-say/
 	/// </summary>
 	public class CountAndSaySln
 	{

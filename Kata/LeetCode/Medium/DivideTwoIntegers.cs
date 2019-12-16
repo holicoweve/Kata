@@ -1,8 +1,17 @@
 ﻿using System;
 
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
-    public class DivideTwoIntegers
+    /// <summary>
+    /// 29. Divide Two Integers
+    ///
+    /// Given two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.
+    /// Return the quotient after dividing dividend by divisor.
+    /// The integer division should truncate toward zero.
+    /// 
+    /// https://leetcode.com/problems/divide-two-integers/
+    /// </summary>
+	public class DivideTwoIntegers
     {
         public int Divide(int dividend, int divisor)
         {

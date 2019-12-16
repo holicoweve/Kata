@@ -1,5 +1,5 @@
-﻿using Castle.Core.Logging;
-using Kata;
+﻿using Kata.LeetCode.DataStructure;
+using Kata.LeetCode.Medium;
 using NUnit.Framework;
 
 namespace KataTests

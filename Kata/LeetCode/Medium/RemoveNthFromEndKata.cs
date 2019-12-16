@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using Kata.LeetCode.DataStructure;
 
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
 	/// <summary>
-	///     Remove Nth Node From End of List
-	///     https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+	/// 19. Remove Nth Node From End of List
+	/// 
+	/// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 	/// </summary>
 	public class RemoveNthFromEndKata
 	{

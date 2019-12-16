@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Kata
+namespace Kata.HackerRank
 {
+	/// <summary>
+	/// Forming a Magic Square
+	/// 
+	/// https://www.hackerrank.com/challenges/magic-square-forming/problem
+	/// </summary>
 	class FormingMagicSquare
 	{
+		//TODO: unfinished
 		private int _validArraySize = 9;
 
 		public int[,] ParseArrayToSquare(int[] input)

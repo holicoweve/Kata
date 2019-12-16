@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using Kata;
-using NUnit;
+﻿using Kata.LeetCode.Medium;
 using NUnit.Framework;
 
 namespace KataTests

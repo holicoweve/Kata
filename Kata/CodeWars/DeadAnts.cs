@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Kata
+namespace Kata.CodeWars
 {
 	public class DeadAnts
 	{
@@ -15,6 +15,7 @@ namespace Kata
 		///     The resulting carnage looks like this:
 		///     ...ant...ant..nat.ant.t..ant...ant..ant..ant.anant..t
 		///     Can you find how many ants have died?
+		/// 
 		///     https://www.codewars.com/kata/dead-ants/csharp
 		/// </summary>
 		/// <param name="input"></param>

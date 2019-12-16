@@ -1,10 +1,10 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
 	/// <summary>
 	/// Letter Combinations of a Phone Number
+	/// 
 	/// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 	/// </summary>
 	public class LetterCombinationsKata

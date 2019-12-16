@@ -1,5 +1,4 @@
-﻿using Kata;
-using NUnit;
+﻿using Kata.CodeWars;
 using NUnit.Framework;
 
 namespace KataTests

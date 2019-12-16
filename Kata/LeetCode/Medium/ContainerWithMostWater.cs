@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
-
-namespace Kata
+namespace Kata.LeetCode.Medium
 {
 	/// <summary>
-	/// Container With Most Water
+	/// 11. Container With Most Water
+	/// 
 	/// https://leetcode.com/problems/container-with-most-water/
 	/// </summary>
 	public class ContainerWithMostWater
