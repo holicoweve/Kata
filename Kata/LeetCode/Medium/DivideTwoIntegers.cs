@@ -25,12 +25,11 @@ namespace Kata.LeetCode.Medium
             {
 	            var multiplier = 1;
 	            var deduction = divisor;
-	            while (dividend > deduction<<1)
+	            while (dividend >= (deduction<<1))
 	            {
 		            multiplier <<= 1;
 		            deduction <<= 1;
 	            }
-
 	            quotient += multiplier;
 	            dividend -= deduction;
             }
