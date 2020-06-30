@@ -47,6 +47,4 @@ namespace Kata.LeetCode.Medium
 			return LongestSubstring(input).Length;
 		}
 	}
-
-
 }
