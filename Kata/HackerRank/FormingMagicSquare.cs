@@ -5,10 +5,10 @@ namespace Kata.HackerRank
 {
 	/// <summary>
 	/// Forming a Magic Square
-	/// 
+	///
 	/// https://www.hackerrank.com/challenges/magic-square-forming/problem
 	/// </summary>
-	class FormingMagicSquare
+	internal class FormingMagicSquare
 	{
 		//TODO: unfinished
 		private int _validArraySize = 9;

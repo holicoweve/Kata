@@ -18,7 +18,6 @@ namespace KataTests
 		public void BasicTest()
 		{
 			Assert.AreEqual(2, _deadAnts.DeadAntsCount("ant anantt aantnt"));
-
 		}
 
 		[Test]

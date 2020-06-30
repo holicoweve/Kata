@@ -4,7 +4,7 @@ namespace Kata.CodeWars
 {
 	/// <summary>
 	/// Counting Duplicates
-	/// 
+	///
 	/// https://www.codewars.com/kata/counting-duplicates
 	/// </summary>
 	public class CountNumberOfDuplicate

@@ -1,6 +1,5 @@
 using Kata.LeetCode.Medium;
 using NUnit.Framework;
-using System;
 
 namespace KataTests.LeetCode.Medium
 {
@@ -12,14 +11,14 @@ namespace KataTests.LeetCode.Medium
 		[SetUp]
 		public void Setup()
 		{
-			_kata= new SearchInRotatedSortedArray();
+			_kata = new SearchInRotatedSortedArray();
 		}
 
 		[Test]
 		public void SimpleTest()
 		{
 			// Arrange
-			int[] nums = {4,5,6,7,0,1,2};
+			int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
 			int target = 0;
 			int expected = 4;
 
@@ -36,7 +35,7 @@ namespace KataTests.LeetCode.Medium
 		public void EmptyNums()
 		{
 			// Arrange
-			int[] nums = {};
+			int[] nums = { };
 			int target = 0;
 			int expected = -1;
 
@@ -53,7 +52,7 @@ namespace KataTests.LeetCode.Medium
 		public void NoResult()
 		{
 			// Arrange
-			int[] nums = {4,5,6,7,0,1,2};
+			int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
 			int target = 3;
 			int expected = -1;
 

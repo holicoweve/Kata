@@ -7,6 +7,7 @@ namespace KataTests
 	public class CountNumberOfDuplicateTest
 	{
 		private CountNumberOfDuplicate _kata;
+
 		[SetUp]
 		public void Setup()
 		{
@@ -32,13 +33,12 @@ namespace KataTests
 		}
 
 		[Test]
-		[TestCase("aabbcde",2)]
-		[TestCase("Indivisibility",1)]
-		[TestCase("Indivisibilities",2)]
+		[TestCase("aabbcde", 2)]
+		[TestCase("Indivisibility", 1)]
+		[TestCase("Indivisibilities", 2)]
 		public void SimpleTest(string input, int expected)
 		{
 			Assert.AreEqual(expected, _kata.DuplicateCount(input));
 		}
-
 	}
 }

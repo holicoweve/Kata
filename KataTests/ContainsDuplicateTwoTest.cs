@@ -21,7 +21,6 @@ namespace KataTests
 		public void SimpleTest(int[] inputs, int output, bool expected)
 		{
 			Assert.AreEqual(expected, _kata.ContainsNearbyDuplicate(inputs, output));
-
 		}
 
 		[Theory]

@@ -23,7 +23,6 @@ namespace Kata.LeetCode.Easy
 			}
 
 			return lcp;
-
 		}
 
 		internal string CommonPrefix(string input1, string input2)

@@ -11,7 +11,7 @@ namespace Kata.CodeWars
 	///     Eg:
 	///     "zero nine five two" -> "four"
 	///     If the string is empty or includes a number greater than 9, return "n/a"
-	/// 
+	///
 	///     https://www.codewars.com/kata/string-average/train/csharp
 	/// </summary>
 	public class StringAverage
@@ -29,7 +29,7 @@ namespace Kata.CodeWars
 					.AsEnumerable()
 					.Select(x => x.TextToInt())
 					.Average();
-				return ((int) Math.Floor(average)).IntToText();
+				return ((int)Math.Floor(average)).IntToText();
 			}
 			catch (ArgumentOutOfRangeException)
 			{

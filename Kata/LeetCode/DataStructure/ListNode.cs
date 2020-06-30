@@ -10,7 +10,7 @@
 			Val = x;
 		}
 
-		public override bool Equals(object  obj)
+		public override bool Equals(object obj)
 		{
 			var otherNode = obj as ListNode;
 			if (Val != otherNode.Val)

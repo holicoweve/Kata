@@ -4,7 +4,7 @@ namespace Kata.LeetCode.Medium
 {
 	/// <summary>
 	/// Letter Combinations of a Phone Number
-	/// 
+	///
 	/// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 	/// </summary>
 	public class LetterCombinationsKata
@@ -37,5 +37,4 @@ namespace Kata.LeetCode.Medium
 			return returnValue;
 		}
 	}
-
 }

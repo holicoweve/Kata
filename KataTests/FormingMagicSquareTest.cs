@@ -35,25 +35,25 @@ namespace KataTests
 		[Test]
 		public void SameMagicSquaresCostEqualsZero()
 		{
-			var targetSquare = _kata.ParseArrayToSquare( new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
-			var inputSquare = _kata.ParseArrayToSquare( new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
+			var targetSquare = _kata.ParseArrayToSquare(new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
+			var inputSquare = _kata.ParseArrayToSquare(new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
 
 			var expected = 0;
 			var actual = _kata.CalculateCost(inputSquare, targetSquare);
-			
-			Assert.AreEqual(expected,actual);
+
+			Assert.AreEqual(expected, actual);
 		}
 
 		[Test]
 		public void MagicSquaresOffByOneCostEqualsOne()
 		{
-			var targetSquare = _kata.ParseArrayToSquare( new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
-			var inputSquare = _kata.ParseArrayToSquare( new[] { 5, 9, 2, 3, 5, 7, 8, 1, 6 });
+			var targetSquare = _kata.ParseArrayToSquare(new[] { 4, 9, 2, 3, 5, 7, 8, 1, 6 });
+			var inputSquare = _kata.ParseArrayToSquare(new[] { 5, 9, 2, 3, 5, 7, 8, 1, 6 });
 
 			var expected = 1;
 			var actual = _kata.CalculateCost(inputSquare, targetSquare);
-			
-			Assert.AreEqual(expected,actual);
+
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }

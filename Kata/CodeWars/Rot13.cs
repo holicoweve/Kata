@@ -4,7 +4,7 @@ namespace Kata.CodeWars
 {
 	/// <summary>
 	/// ROT13
-	/// 
+	///
 	/// https://www.codewars.com/kata/rot13/csharp
 	/// </summary>
 	public class Rot13
