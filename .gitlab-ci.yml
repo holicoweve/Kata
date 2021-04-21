@@ -1,0 +1,13 @@
+stages:
+  - test
+  
+test-job:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+  tags:
+    - docker
+  script:
+    - dotnet restore
+    - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/ --no-restore
+  interruptible: true
+  retry: 2
